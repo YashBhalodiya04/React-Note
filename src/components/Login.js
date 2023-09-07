@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [authdata, setauthdata] = useState({ email: "", password: "" });
+  const [auth, setauth] = useState({});
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,8 +19,9 @@ const Login = () => {
       })
     });
     const Auth = await response.json();
+    setauth(Auth)
 
-    if(Auth.Success){
+    if(auth.Success){
         localStorage.setItem('token',Auth.Token);
         navigate("/Home");
     }else{

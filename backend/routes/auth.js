@@ -31,7 +31,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({Sucess:"false", error: "Sorry a user with this email already exists" });
+          .json({Success:"false", error: "Sorry a user with this email already exists" });
       }
 
       // secure password with bcrypt salt
