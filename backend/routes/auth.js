@@ -18,8 +18,8 @@ router.post(
     body("password","Password have at list 5 characters").isLength({ min: 5 }),
   ],
   async (req, res) => {
-    let Success = false;
     // If there are errors, return Bad request and the errors
+    let Success = false;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({Success, errors: errors.array() });
@@ -31,7 +31,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({Success, error: "Sorry a user with this email already exists" });
+          .json({Sucess:"false", error: "Sorry a user with this email already exists" });
       }
 
       // secure password with bcrypt salt
