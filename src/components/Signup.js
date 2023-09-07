@@ -20,10 +20,9 @@ const Signup = () => {
         }),
       });
       const SignupAuth = await response.json();
-      console.log(SignupAuth);
   
       if(SignupAuth.Success){
-          localStorage.setItem('token',SignupAuth.Token);
+          window.localStorage.setItem('token',SignupAuth.Token);
           navigate("/Home");
       }else{
           alert("Invalid Token")

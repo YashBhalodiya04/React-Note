@@ -3,29 +3,32 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [authdata, setauthdata] = useState({ email: "", password: "" });
-  const [auth, setauth] = useState({});
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(process.env.REACT_APP_LOGIN_API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: authdata.email,
-        password: authdata.password,
-      })
-    });
-    const Auth = await response.json();
-    setauth(Auth)
-
-    if(auth.Success){
-        localStorage.setItem('token',Auth.Token);
-        navigate("/Home");
-    }else{
-        alert("Invalid Token")
+    try {
+      
+      const response = await fetch(process.env.REACT_APP_LOGIN_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: authdata.email,
+          password: authdata.password,
+        })
+      });
+      const Auth = await response.json();
+  
+      if(Auth.Success){
+          window.localStorage.setItem('token',Auth.Token);
+          navigate("/Home");
+      }else{
+          alert("Invalid Token")
+      }
+    } catch (error) {
+      console.error(error)
     }
 
   };
