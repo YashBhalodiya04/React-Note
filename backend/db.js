@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURL = "mongodb://127.0.0.1:27017/notebook"
+const mongoURL = "mongodb+srv://yashbhalodia2002:Yashkb9898@yash.gmqv3wv.mongodb.net/notebook"
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
