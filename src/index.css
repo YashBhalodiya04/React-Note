@@ -42,20 +42,19 @@ html,body{
 }
 .loginpage{
   background-color: #212529;
-  height:40%;
-  width: 35%;
-  padding: 32px;
+  height:43%;
+  width: 30%;
+  padding: 20px;
 }
 .loginpage .loginform{
-  height: 60%;
+  height: 100%;
   width: 100%;
-  gap: 10px;
 }
 
 .signuppage{
   background-color: #212529;
-  height:69%;
-  width: 35%;
+  height:65%;
+  width: 30%;
   padding: 32px;
 }
 
@@ -124,6 +123,19 @@ html,body{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  }
+  .loginpage{
+    background-color: #212529;
+    height:400px;
+    width: 300px;
+    padding: 20px;
+  }
+
+  .signuppage{
+    background-color: #212529;
+    height:550px;
+    width: 300px;
+    padding: 32px;
   }
 }
 @media (max-width:760px) {

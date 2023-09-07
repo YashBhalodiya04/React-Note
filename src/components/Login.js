@@ -38,7 +38,7 @@ const Login = () => {
         className="d-flex flex-column justify-content-around loginform"
         onSubmit={handleSubmit}
       >
-        <div className="mb-3">
+        <div className="">
           <label htmlFor="email" className="form-label fs-6 text-light">
             Email
           </label>
@@ -53,7 +53,7 @@ const Login = () => {
             placeholder="Enter Email"
           />
         </div>
-        <div className="mb-3">
+        <div className="">
           <label htmlFor="password" className="form-label fs-6 text-light">
             Password
           </label>
