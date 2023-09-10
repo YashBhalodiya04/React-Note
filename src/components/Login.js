@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
     try {
       
-      const response = await fetch(process.env.REACT_APP_LOGIN_API, {
+      const response = await (await fetch(process.env.REACT_APP_LOGIN_API, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -18,11 +18,11 @@ const Login = () => {
           email: authdata.email,
           password: authdata.password,
         })
-      });
-      const Auth = await response.json();
+      })).json();
+      // const Auth = await response.json();
   
-      if(Auth.Success){
-          window.localStorage.setItem('token',Auth.Token);
+      if(response.Success){
+          window.localStorage.setItem('token',response.Token);
           navigate("/Home");
       }else{
           alert("Invalid Token")
