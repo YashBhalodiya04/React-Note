@@ -55,6 +55,7 @@ const Login = () => {
             value={authdata.email}
             onChange={onchange}
             placeholder="Enter Email"
+            required
           />
         </div>
         <div className="">
@@ -69,6 +70,7 @@ const Login = () => {
             value={authdata.password}
             onChange={onchange}
             placeholder="Enter Password"
+            required
           />
         </div>
         <button type="submit" className="btn btn-primary p-2">
