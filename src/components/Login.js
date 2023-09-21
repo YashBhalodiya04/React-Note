@@ -19,7 +19,7 @@ const Login = () => {
         })
       }).catch(err => console.log(err));
       const Auth = await response.json();
-  
+    
       if(Auth.Success){
           window.localStorage.setItem('token',Auth.Token);
           navigate("/Home");
