@@ -8,7 +8,7 @@ const Signup = () => {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      const response = await fetch(process.env.REACT_APP_SIGNUP_API, {
+      const response = await fetch("https://colorful-foal-loafers.cyclic.app/api/auth/createuser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const Notestate = (props) => {
     const getallnotes = async () => {
 
         // CALL API
-        const response = await fetch(process.env.REACT_APP_GET_ALL_NOTE_API, {
+        const response = await fetch("https://colorful-foal-loafers.cyclic.app/api/notes/fetchallnotes", {
             mathod: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const Notestate = (props) => {
     const addnote = async (title, description, tag) => {
 
         // CALL API
-        const response = await fetch(process.env.REACT_APP_ADD_NOTE_API, {
+        const response = await fetch("https://colorful-foal-loafers.cyclic.app/api/notes/addnote", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Notestate = (props) => {
         if (chance) {
             
             // CAL API
-            const response = await fetch(`${process.env.REACT_APP_DELETE_NOTE_API}${id}`, {
+            const response = await fetch(`https://colorful-foal-loafers.cyclic.app/api/notes/deletenote/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const Notestate = (props) => {
     const updatednote = async (id, title, description, tag) => {
 
         // CALL API
-        const response = await fetch(`${process.env.REACT_APP_UPDATE_NOTE_API}${id}`, {
+        const response = await fetch(`https://colorful-foal-loafers.cyclic.app/api/notes/updatenote/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -103,7 +103,7 @@ const Notestate = (props) => {
     const userdetail = async () =>{
 
         // CALL API
-        const response = await fetch(process.env.REACT_APP_USERDEATIL_API, {
+        const response = await fetch("https://colorful-foal-loafers.cyclic.app/api/auth/getuser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -8,7 +8,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(process.env.REACT_APP_LOGIN_API, {
+      const response = await fetch("https://colorful-foal-loafers.cyclic.app/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
